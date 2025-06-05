@@ -13,6 +13,8 @@ class User(Base):
     full_name = Column(String(255), index=True)
     is_active = Column(Boolean, default=True)
     is_superuser = Column(Boolean, default=False) # Admin yetkisi için
+    cart = relationship("Cart", back_populates="owner", uselist=False, cascade="all, delete-orphan")
+    # orders = relationship("Order", back_populates="owner") # Siparişler eklendiğinde
 
     # Örnek: Kullanıcının siparişleri varsa
     # orders = relationship("Order", back_populates="owner")
