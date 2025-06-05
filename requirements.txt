@@ -1,12 +1,16 @@
 fastapi
 uvicorn[standard]
 sqlalchemy
-pymysql    
+# MySQL için aşağıdaki iki satırdan birini seçin:
+# mysqlclient 
+pymysql     # Saf Python, kurulumu daha kolay
 pydantic
 passlib[bcrypt]
 python-jose[cryptography]
 alembic
 python-dotenv
+
+# Testler için (opsiyonel ama şiddetle tavsiye edilir):
 pytest
 httpx
-pytest-asyncio 
+pytest-asyncio # Pytest'in FastAPI gibi async kodlarla çalışması için
