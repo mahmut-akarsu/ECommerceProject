@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.api.api_v1.api import api_router as api_v1_router
 from app.db.session import engine, Base
 import app.models.user_model # User modelinin Base.metadata'ya kaydedilmesi için
+import app.models.product_model
 
 # Eğer Alembic kullanmıyorsanız ve tabloları uygulama başlangıcında oluşturmak isterseniz:
 CREATE_TABLES = True # <<< Kontrolü kolaylaştırmak için bir değişken kullanabilirsiniz
