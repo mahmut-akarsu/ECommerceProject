@@ -13,6 +13,7 @@ class Product(Base):
     price = Column(Float, nullable=False)
     stock_quantity = Column(Integer, nullable=False, default=0) # Stok miktarı
     image_url = Column(String(500), nullable=True) # Ürün görseli URL'i
+    order_items = relationship("OrderItem", back_populates="product")
 
     # Örnek: Eğer bir kategoriye aitse
     # category_id = Column(Integer, ForeignKey("categories.id"))
